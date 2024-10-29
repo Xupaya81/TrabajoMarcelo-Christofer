@@ -6,7 +6,7 @@ def generar_conexion():
         'user': 'root',
         'password': '',
         'host': 'localhost',
-        'database': 'trabajo_Marcelo-Christofer'
+        'database': 'gestion_empleados'
     }
     try:
         conexion = mysql.connector.connect(**config)
