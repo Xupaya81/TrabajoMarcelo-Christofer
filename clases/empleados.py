@@ -1,6 +1,7 @@
 from datetime import datetime
-from tipo_usuario import id_tipo_usuario
+from tipo_usuario import Tipo_Usuario 
 from rut_chile import rut_chile
+import re
 
 class Empleados():
  
