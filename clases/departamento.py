@@ -6,3 +6,6 @@ class Departamento():
         self. id_departamento= id_departamento
         self. nombre= nombre
         self. id_empleado= id_empleado
+        
+
+        #falta agregar una funcion que agregre un empleado a un departamento, pensaba que podriamos hacerlo solo con su id para omitir tanto webeo
