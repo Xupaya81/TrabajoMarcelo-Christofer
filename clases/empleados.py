@@ -16,9 +16,10 @@ class Empleados():
   self. telefono = telefono
   self. direccion = direccion
   self. rut_empleado = rut_empleado
-
+# este es el metodo para validar los rut 
   def validar_rut(self):
         return rut_chile.is_valid_rut(self.rut_empleado)
+  #metodo para validar el correo si creas mas clases que tengan q ver con este campo importa re y agrega esta funcion, es como para aditir caracteres especiales
   
   def validar_correo(self):
         regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
