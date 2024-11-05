@@ -46,7 +46,9 @@ CREATE TABLE ProyectoEmpleado (
 CREATE TABLE RegistroTiempo (
     IdRegistroTiempo TINYINT NOT NULL AUTO_INCREMENT,
     Fecha DATE NOT NULL,
-    IdProyectoEmpleado
+    IdProyectoEmpleado TINYINT NOT NULL,
     CantidadHoras TINYINT NOT NULL,
     PRIMARY KEY (IdRegistroTiempo)
+     CONSTRAINT fk_ProyectoEmpleadoRegistroTiempo FOREIGN KEY (IdProyectoEmpleado) REFERENCES Proyecto(IdProyectoEmpleado)
+);
 );
