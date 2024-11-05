@@ -11,11 +11,10 @@ def agregarEmpleado(cnx):
     correo = input("Correo: ")
     telefono = int(input("Telefono: "))
     direccion = input("Dirección: ")
-    id_tipo = int(input("ID tipo: "))
     rut = input("Rut empleado: ")
     cursor = cnx.cursor()
-    cursor.execute("INSERT INTO empleados (id_empleado, nombre, fecha_contrato, fecha_nacimiento, salario, correo, telefono, direccion, id_tipo, rut) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-    (id_empleado, nombre, fecha_contrato, fecha_nacimiento, salario, correo, telefono, direccion, id_tipo, rut)
+    cursor.execute("INSERT INTO empleados (id_empleado, nombre, fecha_contrato, fecha_nacimiento, salario, correo, telefono, direccion, rut) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+    (id_empleado, nombre, fecha_contrato, fecha_nacimiento, salario, correo, telefono, direccion, rut)
     )   
     cnx.commit()
     print(f"Colaborador {nombre}, agregado.")
