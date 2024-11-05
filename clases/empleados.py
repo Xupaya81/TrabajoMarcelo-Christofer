@@ -1,5 +1,5 @@
 from datetime import datetime
-from tipo_usuario import Tipo_Usuario 
+from clases.tipoUsuario import TipoUsuario 
 from rut_chile import rut_chile
 import re
 
@@ -7,15 +7,15 @@ class Empleados():
  
  def __init__(self, id_empleado, Nombre_empleado, fecha_contrato, fecha_nacimiento, salario, correo, telefono, direccion, id_tipo_usuario, rut_empleado):      
   super().__init__(id_tipo_usuario)
-  self. id_empleado = id_empleado
-  self. Nombre_empleado = Nombre_empleado
-  self. fecha_contrato = fecha_contrato
-  self. fecha_nacimiento = fecha_nacimiento
-  self. salario = salario 
-  self. correo = correo
-  self. telefono = telefono
-  self. direccion = direccion
-  self. rut_empleado = rut_empleado
+  self.id_empleado = id_empleado
+  self.Nombre_empleado = Nombre_empleado
+  self.fecha_contrato = fecha_contrato
+  self.fecha_nacimiento = fecha_nacimiento
+  self.salario = salario 
+  self.correo = correo
+  self.telefono = telefono
+  self.direccion = direccion
+  self.rut_empleado = rut_empleado
 # este es el metodo para validar los rut 
   def validar_rut(self):
         return rut_chile.is_valid_rut(self.rut_empleado)

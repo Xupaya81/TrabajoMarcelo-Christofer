@@ -3,7 +3,7 @@ class Departamento():
         self.id_departamento = id_departamento
         self.nombre = nombre
         self.empleados =[]  # creacion de lista de empleados
-        self. departamentos =[]
+        
     def agregar_empleado(self, id_empleado):
         # Verificamos si el ID del empleado ya está en la lista
         if id_empleado not in self.empleados:
