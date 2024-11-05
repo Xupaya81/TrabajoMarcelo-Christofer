@@ -49,6 +49,5 @@ CREATE TABLE RegistroTiempo (
     IdProyectoEmpleado TINYINT NOT NULL,
     CantidadHoras TINYINT NOT NULL,
     PRIMARY KEY (IdRegistroTiempo)
-     CONSTRAINT fk_ProyectoEmpleadoRegistroTiempo FOREIGN KEY (IdProyectoEmpleado) REFERENCES Proyecto(IdProyectoEmpleado)
-);
+    CONSTRAINT fk_ProyectoEmpleadoRegistroTiempo FOREIGN KEY (IdProyectoEmpleado) REFERENCES Proyecto(IdProyectoEmpleado)
 );
