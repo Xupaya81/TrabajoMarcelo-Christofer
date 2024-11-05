@@ -34,16 +34,6 @@ CREATE TABLE Proyecto (
     FechaInicio DATE NOT NULL,
     PRIMARY KEY (IdProyecto)
 );
-
-CREATE TABLE TipoEmpleadoEmpleo (
-    IdTipoEmpleadoEmpleo TINYINT NOT NULL AUTO_INCREMENT,
-    IdEmpleado TINYINT,
-    IdTipoEmpleado TINYINT,
-    PRIMARY KEY (IdTipoEmpleadoEmpleo),
-    CONSTRAINT fk_EmpleadoTipoEmpleadoEmpleo FOREIGN KEY (IdEmpleado) REFERENCES Empleados(IdEmpleado),
-    CONSTRAINT fk_TipoEmpleadoTipoEmpleadoEmpleo FOREIGN KEY (IdTipoEmpleado) REFERENCES TipoUsuario(IdTipoUsuario)
-);
-
 CREATE TABLE ProyectoEmpleado (
     IdProyectoEmpleado TINYINT NOT NULL AUTO_INCREMENT,
     IdEmpleado TINYINT NOT NULL,
@@ -56,15 +46,7 @@ CREATE TABLE ProyectoEmpleado (
 CREATE TABLE RegistroTiempo (
     IdRegistroTiempo TINYINT NOT NULL AUTO_INCREMENT,
     Fecha DATE NOT NULL,
+    IdProyectoEmpleado
     CantidadHoras TINYINT NOT NULL,
     PRIMARY KEY (IdRegistroTiempo)
-);
-
-CREATE TABLE Asignacion (
-    IdAsignacion TINYINT NOT NULL AUTO_INCREMENT,
-    IdDepartamento TINYINT NOT NULL,
-    IdEmpleado TINYINT NOT NULL,
-    PRIMARY KEY (IdAsignacion),
-    CONSTRAINT fk_DepartamentoAsignacion FOREIGN KEY (IdDepartamento) REFERENCES Departamento(IdDepartamento),
-    CONSTRAINT fk_EmpleadoAsignacion FOREIGN KEY (IdEmpleado) REFERENCES Empleados(IdEmpleado)
 );
