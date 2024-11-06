@@ -2,39 +2,32 @@ import mysql.connector
 from mysql.connector import errorcode
 
 def generar_conexion():
-    config={
+    """
+    Genera una conexión a la base de datos MySQL.
+
+    Returns:
+        mysql.connector.connection.MySQLConnection: Objeto de conexión a la base de datos, 
+                                                    o None si la conexión falla.
+    """
+    config = {
         'user': 'root',
         'password': '',
         'host': 'localhost',
-        'database': 'gestion_empleados'
+        'database': 'gestion_empleados'  # Nombre de la base de datos
     }
     try:
         conexion = mysql.connector.connect(**config)
-        if conexion and conexion.is_connected():
-            cursor = conexion.cursor()
-            cursor.execute()
-            cursor.execute(cursor)
-            if cursor != None:
-                for registro in cursor:
-                    print(registro)
-                    
-                    # for (first_name, last_name, hire_date) in cursor:
-                    #     print("{}, {} was hired on {:%d %b %Y}".format(
-                    #         last_name, first_name, hire_date))
-
-                cursor.close()
-            else:
-                print("Su búsqueda no arrojó resultados...")
-            conexion.close()
+        if conexion.is_connected():
+            print("Conexión a la base de datos establecida correctamente.")
+            return conexion
         else:
-            print("Could not connect")
-    
-    except mysql.connector.Error as error:
-        if error.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-            print("Acceso denegado para el usuario o la contraseña")
-        elif error.errno == errorcode.ER_BAD_DB_ERROR:
-            print("Su base de datos NO existe")
+            print("No se pudo conectar a la base de datos.")
+            return None
+    except mysql.connector.Error as err:
+        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+            print("Acceso denegado para el usuario o la contraseña.")
+        elif err.errno == errorcode.ER_BAD_DB_ERROR:
+            print("La base de datos no existe.")
         else:
-            print(error)
-    else:
-        conexion.close()
+            print(f"Error de conexión: {err}")
+        return None
